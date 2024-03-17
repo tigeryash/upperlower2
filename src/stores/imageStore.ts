@@ -67,6 +67,7 @@ export const useImageStore = create<Store>((set, get) => ({
         );
         const randomImages = randomIndices.map((index) => get().images[index]);
         set(() => ({ display: [...get().display.slice(1), ...randomImages] }));
+        set(() => ({ isAnimating: false }));
       }, 3000);
     } else {
       setTimeout(() => {
@@ -83,6 +84,7 @@ export const useImageStore = create<Store>((set, get) => ({
     const randomIndices = get().getUniqueRandomIndices(3, get().images.length);
     const randomImages = randomIndices.map((index) => get().images[index]);
     set(() => ({ display: randomImages }));
+    set(() => ({ isAnimating: false }));
   },
   fetchImages: async () => {
     try {
