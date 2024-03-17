@@ -38,20 +38,20 @@ export const useImageStore = create<Store>((set, get) => ({
     if (second.value >= first.value) {
       setTimeout(() => {
         set(() => ({ score: get().score + 1 }));
-        set(() => ({ clicked: false }));
         const randomIndices = get().getUniqueRandomIndices(
           1,
           get().images.length
         );
         const randomImages = randomIndices.map((index) => get().images[index]);
         set(() => ({ display: [...get().display.slice(1), ...randomImages] }));
-      }, 3000);
+        set(() => ({ clicked: false }));
+      }, 2200);
     } else {
       setTimeout(() => {
         set(() => ({ clicked: false }));
         set(() => ({ isAnimating: false }));
         set(() => ({ playing: false }));
-      }, 2000);
+      }, 1000);
     }
   },
   handleClickLower: () => {
@@ -60,21 +60,20 @@ export const useImageStore = create<Store>((set, get) => ({
     if (second.value <= first.value) {
       setTimeout(() => {
         set(() => ({ score: get().score + 1 }));
-        set(() => ({ clicked: false }));
         const randomIndices = get().getUniqueRandomIndices(
           1,
           get().images.length
         );
         const randomImages = randomIndices.map((index) => get().images[index]);
         set(() => ({ display: [...get().display.slice(1), ...randomImages] }));
-        set(() => ({ isAnimating: false }));
-      }, 3000);
+        set(() => ({ clicked: false }));
+      }, 2200);
     } else {
       setTimeout(() => {
         set(() => ({ clicked: false }));
         set(() => ({ isAnimating: false }));
         set(() => ({ playing: false }));
-      }, 2000);
+      }, 1000);
     }
   },
 
