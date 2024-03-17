@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     fetchImages();
-  }, [fetchImages]);
+  }, []);
 
   useEffect(() => {
     if (score > highScore) {

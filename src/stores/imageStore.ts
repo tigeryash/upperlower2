@@ -49,6 +49,7 @@ export const useImageStore = create<Store>((set, get) => ({
     } else {
       setTimeout(() => {
         set(() => ({ clicked: false }));
+        set(() => ({ isAnimating: false }));
         set(() => ({ playing: false }));
       }, 2000);
     }
@@ -70,6 +71,7 @@ export const useImageStore = create<Store>((set, get) => ({
     } else {
       setTimeout(() => {
         set(() => ({ clicked: false }));
+        set(() => ({ isAnimating: false }));
         set(() => ({ playing: false }));
       }, 2000);
     }
