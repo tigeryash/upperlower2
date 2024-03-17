@@ -87,10 +87,10 @@ export const useImageStore = create<Store>((set, get) => ({
       const response = await fetch(
         "https://picsum.photos/v2/list?page=1&limit=10"
       );
+      const data = await response.json();
       if (!response.ok) {
         throw new Error("Server Error");
       }
-      const data = await response.json();
       const newData: Image[] = data.map((image: Tdata) => {
         return {
           ...image,
