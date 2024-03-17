@@ -45,7 +45,7 @@ export const useImageStore = create<Store>((set, get) => ({
         );
         const randomImages = randomIndices.map((index) => get().images[index]);
         set(() => ({ display: [...get().display.slice(1), ...randomImages] }));
-      }, 2800);
+      }, 3000);
     } else {
       setTimeout(() => {
         set(() => ({ clicked: false }));
@@ -67,7 +67,7 @@ export const useImageStore = create<Store>((set, get) => ({
         );
         const randomImages = randomIndices.map((index) => get().images[index]);
         set(() => ({ display: [...get().display.slice(1), ...randomImages] }));
-      }, 2800);
+      }, 3000);
     } else {
       setTimeout(() => {
         set(() => ({ clicked: false }));
